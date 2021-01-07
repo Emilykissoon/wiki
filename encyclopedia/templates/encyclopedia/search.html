@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block body %}
+    {% if not entries %}
+        <h1>No Pages containing '{{ entry }}'</h1>
+    {% else %}
+        <h1>All Pages containing '{{ entry }}'</h1>
+        {% for name in entries %}
+            <li><a href="wiki/{{ name }}">{{ name }}</a></li>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
